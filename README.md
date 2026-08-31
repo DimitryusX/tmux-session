@@ -57,3 +57,25 @@ gnome-terminal -- ~/.local/bin/tmux-session.sh start
 - The managed session name is `main` (see `SESSION_NAME` in the script).
 - Window indexes with gaps (e.g. `0, 1, 17`) are remapped to sequential tabs on restore.
 - Running commands and scrollback are not restored — only windows, split layout, and cwd per pane.
+
+### Tips
+
+Config in `nano ~/.tmux.conf`
+
+```
+set -g mouse on # Enable mouse
+
+# Splits (Ctrl + direction)
+bind-key -n C-Left select-pane -L
+bind-key -n C-Right select-pane -R
+bind-key -n C-Up select-pane -U
+bind-key -n C-Down select-pane -D
+
+# Windows (Alt + direction)
+bind-key -n M-Left previous-window
+bind-key -n M-Right next-window
+```
+
+Reload config: `tmux source-file ~/.tmux.conf`
+
+Cron: `*/5 * * * * /home/USER/.local/bin/tmux-session.sh save`
