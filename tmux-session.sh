@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SESSION_NAME="main"
 BACKUP_FILE="$HOME/.config/tmux/tmux_session.txt"

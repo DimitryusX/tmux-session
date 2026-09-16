@@ -14,7 +14,9 @@ chmod +x ~/.local/bin/tmux-session.sh
 
 2. Make sure `~/.local/bin` is in your `PATH` (usually already true on Fedora).
 
-3. Requires `tmux` installed.
+3. Requires `tmux` and **bash 4+** (uses associative arrays: `declare -A`).
+
+   On macOS, system `/bin/bash` is still 3.2 — install a newer bash (e.g. `brew install bash`) and keep the script shebang as `#!/usr/bin/env bash` so it picks up Homebrew’s bash from your `PATH`.
 
 The session state is stored at:
 
